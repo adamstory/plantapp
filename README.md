@@ -27,13 +27,14 @@
 - Create a new cloud-based PostGres database on Heroku
 - Link up:
   - Store my Heroku credentials in an env file
-  - Create a config file
+    - Hide this env file, use gitignore
+  - Create a database folder, containing a config.js and index.js file
   - Check scripts - change them to include "node -r dotenv/config your_script.js" so they run dot/env
 
 #### Creating new table / populating a table in Heroku database
 
 - Create a JS file with a hardcoded array of 3 plants and their respective values
-- Create a scripts folder
+- Create a scripts folder inside of the database folder
   - Create a createTable file which will create a new SQL table on the Heroku database.
     - Create a script in the package.json that will execute this file
     - Check to see if it works
