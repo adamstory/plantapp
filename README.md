@@ -47,13 +47,13 @@
 #### Creating models for CRUD requests
 
 - Create a models folder
-- Create JS file containing functions for : creating, reading, updating and deleting the table created in SQL
+- Create JS file containing functions for : for selecting data (return all, return by id, return by word close to name)
 - Export each function
 
 #### Use the models to make requests to the database
 
-- Import each of the model functions for selecting data (return all, return by id, return by word close to name)
-- Create requests for: creating (.post), reading (.get), updating (.put) and deleting (.delete)
+- Import each of the model functions
+- Create requests in app.js for: creating (.post), reading (.get), updating (.put) and deleting (.delete)
 - Test each request using Postman
 
 ### Front-end
