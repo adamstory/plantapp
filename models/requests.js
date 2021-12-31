@@ -25,3 +25,16 @@ export async function createPlant(info) {
   );
   return data.rows;
 }
+
+export async function updatePlantByID(id, updates) {
+  const data = await query(
+    `UPDATE plants SET name = $1, age = $2, waterrating = $3, image = $4 WHERE id = ${id} RETURNING *;`,
+    [updates.name, updates.age, updates.waterRating, updates.image]
+  );
+  return data.rows;
+}
+
+export async function deletePlantByID(id) {
+  const data = await query(`DELETE FROM plants WHERE id = ${id} RETURNING *;`);
+  return data.rows;
+}
