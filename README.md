@@ -38,5 +38,16 @@
         - Create a script in the package.json that will execute this file
         - Check to see if it works
 
+#### Creating models for CRUD requests 
+- Create a models folder
+- Create JS file containing functions for : creating, reading, updating and deleting the table created in SQL
+- Export each function
+
+#### Use the models to make requests to the database
+- Import each of the model functions
+- Create requests for: creating (.post), reading (.get), updating (.put) and deleting (.delete)
+- Test each request using Postman
+
 ### Front-end
 
+TBC
