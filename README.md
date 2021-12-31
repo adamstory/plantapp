@@ -16,12 +16,13 @@
 ### Back-end
 
 #### Setting up my file structure, installing dependencies
+- Use an ES6 NPX Generator to create the file structure for my project (https://www.npmjs.com/package/express-generator-esmodules)
+    - Check that the import syntax is definitely ES6 
+    - Create .gitignore file - ignore node_modules
 - Instal dependencies: pg, dot/env
 - Instal dev dependencies: prettier, 
 - Create a .prettierrc.json file to start using prettier
 - Ensure the type is set to module in package.json
-- Use an ES6 NPX Generator to create the file structure for my project
-    - Check that the import syntax is definitely ES6 
 - Create a new cloud-based PostGres database on Heroku
 - Link up:
     - Store my Heroku credentials in an env file
