@@ -52,7 +52,7 @@
 
 #### Use the models to make requests to the database
 
-- Import each of the model functions
+- Import each of the model functions for selecting data (return all, return by id, return by word close to name)
 - Create requests for: creating (.post), reading (.get), updating (.put) and deleting (.delete)
 - Test each request using Postman
 
