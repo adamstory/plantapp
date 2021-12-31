@@ -17,3 +17,11 @@ export async function getPlantsByName(plantName) {
   );
   return data.rows;
 }
+
+export async function createPlant(info) {
+  const data = await query(
+    `INSERT INTO plants(name, age, waterRating, image) VALUES ($1, $2, $3, $4) RETURNING *;`,
+    [info.name, info.age, info.waterRating, info.image]
+  );
+  return data.rows;
+}

@@ -3,6 +3,7 @@ import {
   getAllPlants,
   getPlantsByName,
   getPlantByID,
+  createPlant,
 } from "../models/requests.js";
 const router = express.Router();
 
@@ -37,6 +38,19 @@ router.get("/plants/:id", async function (req, res) {
     isSuccess = false;
   }
   res.json({ success: isSuccess, message: message, payload: found });
+});
+
+// Post new plant request
+router.post("/plants", async function (req, res) {
+  let plantInfo = {
+    name: req.body.name,
+    age: req.body.age,
+    waterRating: req.body.waterRating,
+    image: req.body.image,
+  };
+  let isSuccess = true;
+  let newPlant = await createPlant(plantInfo);
+  res.json({ success: isSuccess, message: "You added:", payload: newPlant });
 });
 
 export default router;
