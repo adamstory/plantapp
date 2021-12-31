@@ -4,7 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ./bin/www.js"
+    "start": "node -r dotenv/config ./bin/www.js",
+    "dev": "nodemon -r dotenv/config ./bin/www.js",
+    "createTable": "node -r dotenv/config ./database/scripts/createTable.js",
+    "populateTable": "node -r dotenv/config ./database/scripts/populateTable.js",
+    "deleteTable": "node -r dotenv/config ./database/scripts/deleteTable.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -16,6 +20,7 @@
     "pg": "^8.7.1"
   },
   "devDependencies": {
-    "eslint": "^8.5.0"
+    "eslint": "^8.5.0",
+    "nodemon": "^2.0.15"
   }
 }

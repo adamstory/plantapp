@@ -29,6 +29,8 @@
   - Store my Heroku credentials in an env file
     - Hide this env file, use gitignore
   - Create a database folder, containing a config.js and index.js file
+  - Use syntax 'process.env' to export values from env file
+  - Inside of index file, create a pool referencing these values defined in config
   - Check scripts - change them to include "node -r dotenv/config your_script.js" so they run dot/env
 
 #### Creating new table / populating a table in Heroku database
@@ -57,3 +59,7 @@
 ### Front-end
 
 TBC
+
+### Questions for myself
+
+- Why is the server listening on ... message not appearing in my terminal?
