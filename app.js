@@ -8,12 +8,6 @@ import logger from "morgan";
 
 import usersRouter from "./routes/users.js";
 
-import {
-  getAllPlants,
-  getPlantByID,
-  getPlantsByName,
-} from "./models/requests.js";
-
 const app = express();
 
 app.use(logger("dev"));
@@ -34,14 +28,6 @@ app.use(function (req, res, next) {
 app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).json(err);
-});
-
-// Get all plants
-app.get("/plants", async function (req, res) {
-  let data = await getAllPlants();
-  let message = "Currently owned plants:";
-  let isSuccess = true;
-  res.json({ success: isSuccess, message: message, payload: data });
 });
 
 export default app;
