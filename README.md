@@ -15,8 +15,9 @@
 
 ### Back-end
 
-#### Setting up my file structure, installing dependencies
-
+<details>
+<summary>#### Setting up my file structure, installing dependencies </summary>
+<br>
 - Use an ES6 NPX Generator to create the file structure for my project (https://www.npmjs.com/package/express-generator-esmodules)
   - Check that the import syntax is definitely ES6
   - Create .gitignore file - ignore node_modules
@@ -55,6 +56,7 @@
 - Import each of the model functions
 - Create requests in app.js for: creating (.post), reading (.get), updating (.put) and deleting (.delete)
 - Test each request using Postman
+</details>
 
 ### Front-end
 
