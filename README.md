@@ -16,8 +16,9 @@
 ### Back-end
 
 <details>
-<summary>#### Setting up my file structure, installing dependencies </summary>
+<summary>Expand to see Back-end Plan</summary>
 <br>
+#### Setting up my file structure, installing dependencies 
 - Use an ES6 NPX Generator to create the file structure for my project (https://www.npmjs.com/package/express-generator-esmodules)
   - Check that the import syntax is definitely ES6
   - Create .gitignore file - ignore node_modules
