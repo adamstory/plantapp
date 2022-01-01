@@ -18,7 +18,9 @@
 <details>
 <summary>Expand to see Back-end Plan</summary>
 <br>
-#### Setting up my file structure, installing dependencies 
+
+#### Setting up my file structure, installing dependencies
+
 - Use an ES6 NPX Generator to create the file structure for my project (https://www.npmjs.com/package/express-generator-esmodules)
   - Check that the import syntax is definitely ES6
   - Create .gitignore file - ignore node_modules
@@ -61,7 +63,24 @@
 
 ### Front-end
 
-TBC
+- Create a new Figma file. Inside it, makes notes on:
+
+  - Information I would like to include for each plant
+  - Required fields/functionality for entering data
+  - How data will be viewed, how to move between data
+
+  - Make a low-fi plan of the website
+  - Take a break and then come back to rate out of 10 what works well, and what needs improved
+
+  - Make a second low-fi plan of the website
+  - Take a break and then come back - is the website looking easy to use? are the main features drawing enough attention?
+
+- Make a high-fi plan of the website
+  - For 5 minutes, pick out 3 separate colour palettes with coolors.co
+  - Pick out 2-3 fonts on Google Fonts library
+  - Google how to create UI that transitions like slides on a presentation to see if actually possible
+  - Add images of plants from the plant website as examples
+  - Google how to create your own weather app by pulling from a website / from a api to a website
 
 ### Questions for myself
 
