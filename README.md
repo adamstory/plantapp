@@ -63,6 +63,12 @@
 
 ### Front-end
 
+<details>
+<summary>Expand to see UI Design Plan</summary>
+<br>
+
+#### UI mockup with Figma
+
 - Create a new Figma file. Inside it, makes notes on:
 
   - Information I would like to include for each plant
@@ -76,11 +82,16 @@
   - Take a break and then come back - is the website looking easy to use? are the main features drawing enough attention?
 
 - Make a high-fi plan of the website
+
   - For 5 minutes, pick out 3 separate colour palettes with coolors.co
   - Pick out 2-3 fonts on Google Fonts library
-  - Google how to create UI that transitions like slides on a presentation to see if actually possible
   - Add images of plants from the plant website as examples
-  - Google how to create your own weather app by pulling from a website / from a api to a website
+  </details>
+
+#### HTML / CSS
+
+- Google how to create your own weather app by pulling from a website / from a api to a website
+- Google how to create UI that transitions like slides on a presentation to see if actually possible
 
 ### Questions for myself
 
