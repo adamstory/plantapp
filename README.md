@@ -90,8 +90,16 @@
 
 #### HTML / CSS
 
-- Google how to create your own weather app by pulling from a website / from a api to a website
-- Google how to create UI that transitions like slides on a presentation to see if actually possible
+- Create HTML structure by following the high fi plan
+
+- Practice using CSS grid
+
+  - Use a grid maker (https://grid.layoutit.com/) to generate grid layout for my page
+  - Add to my CSS files and make a rough mockup of the site
+
+- UI Research
+  - Google how to create your own weather app by pulling from a website / from a api to a website
+  - Google how to create UI that transitions like slides on a presentation to see if actually possible
 
 ### Questions for myself
 
