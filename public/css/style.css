@@ -1,12 +1,12 @@
 body {
-  padding: 160px;
-  max-width: 1600px;
+  padding-top: 35px;
+  max-width: 90vw;
   margin: auto;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Sen", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00b7ff;
+  text-decoration: none;
 }
 
 #nav_bar_container {
@@ -15,20 +15,86 @@ a {
   justify-content: space-between;
 }
 
+#logo {
+  font-size: 40px;
+  font-family: "Sarabun", sans-serif;
+  color: black;
+  margin-left: 50px;
+}
+
+#weather_app_container {
+  margin-right: 50px;
+}
+
 #plant_box_container {
   background-color: green;
+  height: 80vh;
   display: flex;
   justify-content: space-between;
 }
 
+#left_button {
+  width: 10%;
+  font-size: 70px;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  border: transparent;
+  background-color: red;
+  align-self: center;
+  transform: rotate(360deg);
+}
+
+#left_button:hover {
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  font-size: 80px;
+}
+
+#right_button {
+  width: 10%;
+  font-size: 70px;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  border: transparent;
+  background-color: red;
+  align-self: center;
+  transform: rotate(180deg);
+}
+
+#right_button:hover {
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  font-size: 80px;
+}
+
 #plant_info_container {
+  position: relative;
+  width: 50%;
   background-color: darkgreen;
+  padding: 30px;
+}
+
+#plant_image_container {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+#plant_overlay_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #plant_data_input_container {
+  width: 30%;
   background-color: yellow;
   display: flex;
   flex-direction: column;
+  padding: 30px 30px 30px 0px;
 }
 
 #notes_container {
@@ -37,12 +103,25 @@ a {
 
 #form_container {
   background-color: yellowgreen;
+}
+
+#form {
   display: flex;
   flex-direction: column;
 }
 
+#form_notes {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+#submit_button {
+  align-self: center;
+}
+
 #plant_image {
-  width: 20%;
+  width: 100%;
 }
 
 #social_links_container {

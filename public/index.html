@@ -5,20 +5,30 @@
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♻️</text></svg>"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@700&family=Sen:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
     <section class="nav_bar">
       <div id="nav_bar_container">
-        <div id="site_logo"><a href="/" rel="home">plant cycle</a></div>
-        <div id="weather_app_container">Weather App</div>
+        <div id="site_logo">
+          <a href="/" rel="home" id="logo">plant cycle</a>
+        </div>
+        <div id="weather_app_container">
+          <img src="images/weather_app_placeholder.png" />
+        </div>
       </div>
     </section>
 
     <section class="plant_box">
       <div id="plant_box_container">
-        <button>Left button</button>
+        <button id="left_button">◀</button>
         <div id="plant_info_container">
           <div id="plant_image_container">
             <img
@@ -26,22 +36,24 @@
               src="https://plnts.com/_next/image?url=https%3A%2F%2Fwebshop.plnts.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2Faa5d334f459227518b6c3cf7ea9d29ed%2Fp%2Fl%2Fpl_l_006-thumbnail_3.jpg&w=1024&q=100"
             />
           </div>
-          <div id="id_name_container">
-            <h1>ID: 1 / monstera deliciosa</h1>
-          </div>
-          <div id="condition_rating_container">
-            <h3>AVG. CONDITION RATING</h3>
-          </div>
-          <div id="last_watered_container">
-            <h3>LAST WATERED, 2 DAYS AGO</h3>
-          </div>
-          <div id="plant_preferences_container">
-            <h3>WATER</h3>
-            <i id="water_icon">icon</i>
-            <h3>TEMPERATURE</h3>
-            <i id="temperature_icon">icon</i>
-            <h3>LIGHT</h3>
-            <i id="light_icon">icon</i>
+          <div id="plant_overlay_container">
+            <div id="id_name_container">
+              <h1>ID: 1 / monstera deliciosa</h1>
+            </div>
+            <div id="condition_rating_container">
+              <h3>AVG. CONDITION RATING</h3>
+            </div>
+            <div id="last_watered_container">
+              <h3>LAST WATERED, 2 DAYS AGO</h3>
+            </div>
+            <div id="plant_preferences_container">
+              <h3>WATER</h3>
+              <i id="water_icon">icon</i>
+              <h3>TEMPERATURE</h3>
+              <i id="temperature_icon">icon</i>
+              <h3>LIGHT</h3>
+              <i id="light_icon">icon</i>
+            </div>
           </div>
         </div>
         <div id="plant_data_input_container">
@@ -52,26 +64,26 @@
             <h4>Example notes 3</h4>
           </div>
           <div id="form_container">
-            <form>
+            <form id="form">
               <div>
                 <input type="checkbox" />
                 <label>WATERED?</label>
               </div>
               <div>
-                <input type="text" />
+                <input type="text" size="2" maxlength="2" />
                 <label>CONDITION?</label>
               </div>
-              <div>
-                <input type="text" />
+              <div id="form_notes">
                 <label>NOTES</label>
+                <input type="text" />
               </div>
-              <div>
+              <div id="submit_button">
                 <input type="submit" />
               </div>
             </form>
           </div>
         </div>
-        <button>Right button</button>
+        <button id="right_button">◀</button>
       </div>
     </section>
 
