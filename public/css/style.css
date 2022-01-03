@@ -11,15 +11,15 @@ a {
 }
 
 #nav_bar_container {
-  background-color: red;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 #logo {
   font-size: 40px;
   font-family: "Sarabun", sans-serif;
-  color: black;
+  color: #2d2d2d;
   margin-left: 50px;
 }
 
@@ -28,7 +28,7 @@ a {
 }
 
 #plant_box_container {
-  background-color: green;
+  background-color: #f6f6f6;
   height: 80vh;
   display: flex;
   justify-content: space-between;
@@ -36,11 +36,13 @@ a {
 
 #left_button {
   width: 10%;
+  height: 100%;
+  background-color: white;
+  color: #05668d;
   font-size: 70px;
   transition-duration: 0.1s;
   transition-timing-function: ease-in;
   border: transparent;
-  background-color: red;
   align-self: center;
   transform: rotate(360deg);
 }
@@ -52,12 +54,14 @@ a {
 }
 
 #right_button {
+  color: #05668d;
   width: 10%;
+  height: 100%;
+  background-color: white;
   font-size: 70px;
   transition-duration: 0.1s;
   transition-timing-function: ease-in;
   border: transparent;
-  background-color: red;
   align-self: center;
   transform: rotate(180deg);
 }
@@ -71,7 +75,6 @@ a {
 #plant_info_container {
   position: relative;
   width: 60%;
-  background-color: darkgreen;
   margin: 30px 0px 30px 30px;
 }
 
@@ -84,7 +87,8 @@ a {
 }
 
 #id_name_container {
-  background-color: red;
+  background: rgba(5, 102, 141, 1);
+  color: white;
   font-size: 30px;
   line-height: 0px;
   text-indent: 20px;
@@ -101,9 +105,9 @@ a {
 }
 
 #condition_rating_container {
+  background: rgba(2, 195, 154, 0.8);
   display: flex;
   flex-direction: column;
-  background-color: red;
   width: 55%;
   margin-top: 120px;
   margin-left: 50px;
@@ -122,28 +126,34 @@ a {
   height: 48px;
   width: 34px;
   margin: 0px 4px 4px 4px;
-  background-color: #555;
+  background-color: #2d2d2d;
+}
+
+#rectangle_10,
+#rectangle_9 {
+  background-color: white;
 }
 
 #last_watered_container {
+  background: rgba(2, 195, 154, 0.8);
   display: flex;
   flex-direction: column;
   width: 40%;
   margin-top: 20px;
   margin-left: 50px;
-  background-color: red;
   line-height: 0px;
   text-indent: 20px;
   font-size: 22px;
 }
 
 #days_ago_text {
+  color: white;
   margin-top: 15px;
   font-size: 40px;
 }
 
 #plant_preferences_container {
-  background-color: red;
+  background: rgba(2, 195, 154, 0.8);
   width: 85%;
   height: 20%;
   margin-left: 50px;
@@ -156,20 +166,25 @@ a {
   text-align: center;
 }
 
+#plant_preferences_container > * {
+  color: white;
+}
+
 #plant_data_input_container {
+  background-color: #f6f6f6;
   width: 30%;
-  background-color: yellow;
   display: flex;
   flex-direction: column;
   padding: 30px;
 }
 
 #notes_container {
-  background-color: lightgreen;
+  height: 40%;
+  background-color: white;
 }
 
 #form_container {
-  background-color: yellowgreen;
+  height: 60%;
 }
 
 #form {
@@ -183,8 +198,30 @@ a {
   align-self: flex-start;
 }
 
+input[type="submit"] {
+  font-size: 80px;
+  width: 100%;
+  background-color: #00a896;
+  color: white;
+  font-family: "Sen", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 38px;
+  padding: 20px 30px 20px 30px;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+
+input[type="submit"]:hover {
+  overflow: hidden;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  background-color: #fc7e37;
+}
+
 #submit_button {
-  align-self: center;
+  padding-top: 230px;
 }
 
 #plant_image {
@@ -192,7 +229,6 @@ a {
 }
 
 #social_links_container {
-  background-color: blue;
   display: flex;
   justify-content: flex-end;
 }
