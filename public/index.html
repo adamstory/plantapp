@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Sarabun:wght@700&family=Sen:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
@@ -57,46 +57,50 @@
                 </div>
               </div>
               <div id="last_watered_container">
-                <h3>LAST WATERED</h3>
+                <h3 id="last_watered_text">LAST WATERED</h3>
                 <h2 id="days_ago_text">2 DAYS AGO</h2>
               </div>
               <div id="plant_preferences_container">
                 <div>
                   <h3>WATER</h3>
-                  <i id="water_icon">icon</i>
+                  <div id="water_icon">water data</div>
                 </div>
                 <div>
                   <h3>TEMPERATURE</h3>
-                  <i id="temperature_icon">icon</i>
+                  <div id="temperature_icon">temp data</div>
                 </div>
                 <div>
                   <h3>LIGHT</h3>
-                  <i id="light_icon">icon</i>
+                  <div id="light_icon">light data</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div id="plant_data_input_container">
+          <h2 id="view_notes_text">VIEW NOTES</h2>
           <div id="notes_container">
-            <h2>VIEW NOTES</h2>
-            <h4>Example notes 1</h4>
-            <h4>Example notes 2</h4>
-            <h4>Example notes 3</h4>
+            <div id="notes_text_container">
+              <h4 id="note">Example notes 1</h4>
+              <h4 id="note">Example notes 2</h4>
+              <h4 id="note">Example notes 3</h4>
+            </div>
           </div>
           <div id="form_container">
             <form id="form">
-              <div>
-                <input type="checkbox" />
-                <label>WATERED?</label>
-              </div>
-              <div>
-                <input type="text" size="2" maxlength="2" />
-                <label>CONDITION?</label>
-              </div>
-              <div id="form_notes">
-                <label>NOTES</label>
-                <input type="text" />
+              <div id="input_container">
+                <div>
+                  <input type="checkbox" />
+                  <label>WATERED?</label>
+                </div>
+                <div>
+                  <input type="text" size="2" maxlength="2" />
+                  <label>CONDITION?</label>
+                </div>
+                <div id="form_notes">
+                  <label>NOTES</label>
+                  <input type="text" />
+                </div>
               </div>
               <div id="submit_button">
                 <input type="submit" />
