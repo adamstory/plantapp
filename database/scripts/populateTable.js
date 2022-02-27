@@ -14,6 +14,7 @@ import plantsArray from "../../plants-data.js";
 async function populatePlantsTable() {
   for (let i = 0; i < plantsArray.length; i++) {
     const name = plantsArray[i].name;
+    const conditionRating = plantsArray[i].conditionRating;
     const lastWatered = plantsArray[i].lastWatered;
     const light = plantsArray[i].light;
     const temperature = plantsArray[i].temperature;
@@ -21,8 +22,17 @@ async function populatePlantsTable() {
     const notes = plantsArray[i].notes;
     const image = plantsArray[i].image;
     const res = await query(
-      `INSERT INTO plants(name, lastWatered, light, temperature, waterRating, notes, image) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING name;`,
-      [name, lastWatered, light, temperature, waterRating, notes, image]
+      `INSERT INTO plants(name, conditionRating, lastWatered, light, temperature, waterRating, notes, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING name;`,
+      [
+        name,
+        conditionRating,
+        lastWatered,
+        light,
+        temperature,
+        waterRating,
+        notes,
+        image,
+      ]
     );
     console.log(res);
   }

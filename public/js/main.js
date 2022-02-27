@@ -10,6 +10,11 @@ let plantWaterTextElement = document.querySelector("#water_icon");
 let plantTempTextElement = document.querySelector("#temperature_icon");
 let plantLightTextElement = document.querySelector("#light_icon");
 
+// Plant rating bar queries
+let plantRatingContainer = document.querySelector("#rectangle_container");
+
+let plantRatingBlocks = document.getElementsByClassName("rectangle");
+
 // Notes queries
 let plantNotesContainer = document.getElementById("notes_text_container");
 
@@ -28,6 +33,7 @@ async function setPlantText() {
 
   // Plant values
   let plantName = plantsArray[currentIndex].name;
+  let conditionRating = plantsArray[currentIndex].conditionrating;
   let plantID = plantsArray[currentIndex].id;
   let plantImage = plantsArray[currentIndex].image;
   let plantLastWateredText = plantsArray[currentIndex].lastwatered;
@@ -50,6 +56,12 @@ async function setPlantText() {
   }
 
   console.log(plantNotesObject, plantNotesObjectLength);
+
+  // Plant condition rating values
+
+  for (let i = 0; i < conditionRating; i++) {
+    plantRatingBlocks[i].style.backgroundColor = "#F6F6F6";
+  }
 
   // Assign data to elements
   plantTitleElement.innerText = `ID: ${plantID} / ${plantName}`;
@@ -81,6 +93,7 @@ function decreaseIndex() {
 }
 
 async function handleRightClick() {
+  clearConditionRating();
   plantNotesContainer.innerHTML = "";
   increaseIndex();
   if (currentIndex === plantsArray.length) {
@@ -89,10 +102,17 @@ async function handleRightClick() {
 }
 
 async function handleLeftClick() {
+  clearConditionRating();
   plantNotesContainer.innerHTML = "";
   decreaseIndex();
   if (currentIndex === plantsArray.length) {
     currentIndex = 0;
+  }
+}
+
+function clearConditionRating() {
+  for (let i = 0; i < 10; i++) {
+    plantRatingBlocks[i].style.backgroundColor = "#2D2D2D";
   }
 }
 

@@ -2,6 +2,7 @@ const plantArray = [
   {
     id: 1,
     name: "Monstera Deliciosa",
+    conditionRating: 9,
     lastWatered: 4,
     light: "sun",
     temperature: "20-24",
@@ -17,6 +18,7 @@ const plantArray = [
   {
     id: 2,
     name: "Syngonium",
+    conditionRating: 10,
     lastWatered: 3,
     light: "indirect",
     temperature: "18-24",
@@ -32,6 +34,7 @@ const plantArray = [
   {
     id: 3,
     name: "Pilea",
+    conditionRating: 6,
     lastWatered: 1,
     light: "shade",
     temperature: "16-22",
@@ -47,6 +50,7 @@ const plantArray = [
   {
     id: 4,
     name: "String of Hearts",
+    conditionRating: 9,
     lastWatered: 8,
     light: "indirect",
     temperature: "14-24",
@@ -62,6 +66,7 @@ const plantArray = [
   {
     id: 5,
     name: "Asparagus Fern",
+    conditionRating: 7,
     lastWatered: 1,
     light: "shade",
     temperature: "20-24",
