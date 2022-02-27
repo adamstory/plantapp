@@ -14,12 +14,15 @@ import plantsArray from "../../plants-data.js";
 async function populatePlantsTable() {
   for (let i = 0; i < plantsArray.length; i++) {
     const name = plantsArray[i].name;
-    const age = plantsArray[i].age;
+    const lastWatered = plantsArray[i].lastWatered;
+    const light = plantsArray[i].light;
+    const temperature = plantsArray[i].temperature;
     const waterRating = plantsArray[i].waterRating;
+    const notes = plantsArray[i].notes;
     const image = plantsArray[i].image;
     const res = await query(
-      `INSERT INTO plants(name, age, waterRating, image) VALUES ($1, $2, $3, $4) RETURNING name;`,
-      [name, age, waterRating, image]
+      `INSERT INTO plants(name, lastWatered, light, temperature, waterRating, notes, image) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING name;`,
+      [name, lastWatered, light, temperature, waterRating, notes, image]
     );
     console.log(res);
   }
