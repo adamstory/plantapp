@@ -1,8 +1,7 @@
 body {
-  padding-top: 35px;
   width: 80vw;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  min-width: 1000px;
   margin: auto;
   font: 14px "Sen", Helvetica, Arial, sans-serif;
 }
@@ -13,19 +12,26 @@ a {
 
 #nav_bar_container {
   display: flex;
+  margin-bottom: 1rem;
   justify-content: space-between;
-  padding-bottom: 20px;
+  align-items: center;
 }
 
-#logo {
-  font-size: 40px;
-  font-family: "Sarabun", sans-serif;
-  color: #2d2d2d;
-  margin-left: 50px;
+#site_logo {
+  margin-left: 7.5rem;
+  margin-top: 4rem;
 }
 
 #weather_app_container {
   margin-right: 50px;
+}
+
+#weather_app_container {
+  width: 70%;
+  height: 8rem;
+  display: flex;
+  align-content: flex-end;
+  transform: scale(83%);
 }
 
 #plant_box_container {
@@ -186,7 +192,7 @@ a {
 }
 
 #notes_container {
-  height: 40%;
+  height: 30%;
   background-color: white;
   overflow: scroll;
 }
@@ -226,10 +232,15 @@ a {
 }
 
 #form_container {
-  background-color: green;
   display: flex;
   height: 60%;
   width: 100%;
+}
+
+#line {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1.5px solid #fc7e37;
 }
 
 #form {
@@ -238,19 +249,76 @@ a {
 
 #input_container {
   height: 65%;
-  background-color: yellow;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fc7e37;
+}
+
+#watered_container {
+  display: flex;
+  align-items: center;
+}
+
+#watered_input {
+  border: 1.5px solid #fc7e37;
+  background-color: white;
+  height: 12%;
+  width: 7%;
+  margin-right: 0.8rem;
+}
+
+input[type="text"] {
+  background-color: white;
+  border: 1.5px solid #fc7e37;
+  width: 100%;
+  height: 100%;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 1.5px solid #fc7e37;
+  width: 100%;
+  height: 100%;
+  color: #fc7e37;
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  margin-left: 0.35rem;
+}
+
+#condition_container {
+  display: flex;
+  align-items: center;
+}
+
+#condition_input {
+  height: 20%;
+  width: 8%;
+  margin-right: 0.8rem;
 }
 
 #form_notes {
   display: flex;
+  width: 100%;
+  height: 50%;
+  margin-top: 1rem;
   flex-direction: column;
   align-self: flex-start;
+}
+
+#notes_input {
+  background-color: red;
+  width: 100%;
+  height: 100%;
 }
 
 input[type="submit"] {
   font-size: 3rem;
   width: 100%;
   height: 100%;
+  border-radius: 2rem;
   background-color: #00a896;
   color: white;
   font-family: "Sen", sans-serif;
@@ -271,7 +339,6 @@ input[type="submit"]:hover {
 #submit_button {
   width: 100%;
   height: 40%;
-  background-color: blue;
 }
 
 #plant_image {
@@ -280,5 +347,12 @@ input[type="submit"]:hover {
 
 #social_links_container {
   display: flex;
+  margin-top: 1rem;
+  margin-right: 6rem;
   justify-content: flex-end;
+}
+
+#social_links_container > * {
+  margin-right: 1rem;
+  transform: scale(0.7);
 }

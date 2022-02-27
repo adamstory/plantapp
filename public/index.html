@@ -18,12 +18,13 @@
     <section class="nav_bar">
       <div id="nav_bar_container">
         <div id="site_logo">
-          <a href="/" rel="home" id="logo">plant cycle</a>
+          <a href="https://www.linkedin.com/in/adam-story/">
+            <img src="./images/plant_cycle_logo.svg"></img>
+            </a>
         </div>
         <div id="weather_app_container">
-          <img src="images/weather_app_placeholder.png" />
-        </div>
-      </div>
+          <div id="ww_bceba374a3ee" v='1.20' loc='auto' a='{"t":"responsive","lang":"en","ids":[],"cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"5","sl_sot":"celsius","sl_ics":"one_a","font":"Arial","el_cwi":3,"el_ctm":3,"cl_odd":"#0000000a"}'><a href="https://weatherwidget.org/" id="ww_bceba374a3ee_u" target="_blank">HTML Weather widget for website by Weatherwidget.org</a></div><script async src="https://srv2.weatherwidget.org/js/?id=ww_bceba374a3ee"></script>
+         </div>
     </section>
 
     <section class="plant_box">
@@ -86,20 +87,27 @@
               <h4 id="note">Example notes 3</h4>
             </div>
           </div>
+          <div id="line"></div>
           <div id="form_container">
             <form id="form">
               <div id="input_container">
-                <div>
-                  <input type="checkbox" />
+                <div id="watered_container">
+                  <div id="watered_input">
+                    <input type="checkbox" />
+                  </div>
                   <label>WATERED?</label>
                 </div>
-                <div>
-                  <input type="text" size="2" maxlength="2" />
+                <div id="condition_container">
+                  <div id="condition_input">
+                    <input type="text" size="2" maxlength="2" />
+                  </div>
                   <label>CONDITION?</label>
                 </div>
                 <div id="form_notes">
                   <label>NOTES</label>
-                  <input type="text" />
+                  <div id="notes_input">
+                    <input type="text" />
+                  </div>
                 </div>
               </div>
               <div id="submit_button">
@@ -114,10 +122,15 @@
 
     <footer>
       <div id="social_links_container">
-        <h3>SOCIAL LINKS</h3>
-        <i>Github Icon</i>
-        <i>Twitter Icon</i>
-        <i>LinkedIn Icon</i>
+        <a class="social_button" href="https://github.com/adamstory">
+        <img class="social_button" src="./images/icons/GitHub_Icon.svg"></img>
+        </a>
+        <a href="https://twitter.com/adam__coding">
+        <img class="social_button" src="./images/icons/Twitter_Icon.svg"></img>
+        </a>
+        <a href="https://www.linkedin.com/in/adam-story/">
+        <img class="social_button" src="./images/icons/LinkedIn_Icon.svg"></img>
+        </a>
       </div>
     </footer>
   </body>
