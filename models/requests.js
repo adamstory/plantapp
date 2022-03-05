@@ -38,3 +38,18 @@ export async function deletePlantByID(id) {
   const data = await query(`DELETE FROM plants WHERE id = ${id} RETURNING *;`);
   return data.rows;
 }
+
+// Notes table
+
+export async function getAllPlantNotes() {
+  const data = await query(`SELECT * FROM plantNotes;`);
+  return data.rows;
+}
+
+export async function createPlantNote(info) {
+  const data = await query(
+    `INSERT INTO plantNotes(id, note) VALUES ($1, $2) RETURNING *;`,
+    [info.id, info.note]
+  );
+  return data.rows;
+}

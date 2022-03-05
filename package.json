@@ -8,7 +8,10 @@
     "dev": "nodemon -r dotenv/config ./bin/www.js",
     "createTable": "node -r dotenv/config ./database/scripts/createTable.js",
     "populateTable": "node -r dotenv/config ./database/scripts/populateTable.js",
-    "deleteTable": "node -r dotenv/config ./database/scripts/deleteTable.js"
+    "deleteTable": "node -r dotenv/config ./database/scripts/deleteTable.js",
+    "createNotesTable": "node -r dotenv/config ./database/scripts_notesDB/createTable.js",
+    "populateNotesTable": "node -r dotenv/config ./database/scripts_notesDB/populateTable.js",
+    "deleteNotesTable": "node -r dotenv/config ./database/scripts_notesDB/deleteTable.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

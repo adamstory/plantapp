@@ -6,6 +6,8 @@ import {
   createPlant,
   updatePlantByID,
   deletePlantByID,
+  getAllPlantNotes,
+  createPlantNote,
 } from "../models/requests.js";
 const router = express.Router();
 
@@ -87,6 +89,32 @@ router.delete("/plants/:id", async function (req, res) {
   deletePlantByID(id);
   const data = await getAllPlants();
   res.json({ success: isSuccess, message: message, payload: data });
+});
+
+// Plant Notes
+
+// Get all plant notes
+router.get("/plantnotes", async function (req, res) {
+  let data = await getAllPlantNotes();
+  let message = "Plant notes:";
+  let isSuccess = true;
+
+  res.json({ success: isSuccess, message: message, payload: data });
+});
+
+// Post new plant note
+router.post("/plantnotes", async function (req, res) {
+  const plantNoteInfo = {
+    id: req.body.id,
+    note: req.body.note,
+  };
+  let isSuccess = true;
+  let newPlantNote = await createPlantNote(plantNoteInfo);
+  res.json({
+    success: isSuccess,
+    message: "You added:",
+    payload: newPlantNote,
+  });
 });
 
 export default router;

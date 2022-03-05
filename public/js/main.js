@@ -15,7 +15,8 @@ let plantRatingContainer = document.querySelector("#rectangle_container");
 
 let plantRatingBlocks = document.getElementsByClassName("rectangle");
 
-// Notes queries
+// Form queries
+let currentPlantIDNumber = document.querySelector("#currentPlantID");
 let plantNotesContainer = document.getElementById("notes_text_container");
 
 // Global variables
@@ -70,6 +71,9 @@ async function setPlantText() {
   plantWaterTextElement.innerText = plantWaterText;
   plantTempTextElement.innerText = `${plantTempText}'C`;
   plantLightTextElement.innerText = plantLightText;
+
+  // Data to form elements
+  currentPlantIDNumber.value = plantsArray[currentIndex].id;
 }
 
 setPlantText();

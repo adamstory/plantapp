@@ -86,7 +86,8 @@
           </div>
           <div id="line"></div>
           <div id="form_container">
-            <form id="form">
+            <form id="form" action="/plantnotes" method="POST">
+              <input type="hidden" id="currentPlantID" name="id"/>
               <div id="input_container">
                 <div id="watered_container">
                   <div id="watered_input">
@@ -103,7 +104,7 @@
                 <div id="form_notes">
                   <label>NOTES</label>
                   <div id="notes_input">
-                    <input type="text" />
+                    <input name="note" type="text" />
                   </div>
                 </div>
               </div>
