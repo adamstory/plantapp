@@ -23,6 +23,7 @@ let plantNotesContainer = document.getElementById("notes_text_container");
 // Global variables
 let currentIndex = 0;
 let plantsArray;
+let plantNotesByID;
 
 async function setPlantText() {
   // Fetch data
@@ -33,9 +34,6 @@ async function setPlantText() {
   const notesResponse = await fetch("/plantnotes");
   const notesData = await notesResponse.json();
   plantNotesArray = notesData.payload;
-
-  // Log data for testing (remove)
-  // console.log(plantsArray);
 
   // Plant values
   let plantName = plantsArray[currentIndex].name;
@@ -49,7 +47,7 @@ async function setPlantText() {
 
   // Plant notes values
 
-  const plantNotesByID = plantNotesArray
+  plantNotesByID = plantNotesArray
     .reverse()
     .filter((item) => item.id === plantID);
 
@@ -58,9 +56,31 @@ async function setPlantText() {
     let newPlantNoteElement = document.createElement("h4");
     newPlantNoteElement.setAttribute("id", "note");
     let newNote = plantNotesByID[i].note;
-    newPlantNoteElement.innerText = newNote;
+    let newNoteDate = plantNotesByID[i].time;
+    newPlantNoteElement.innerText = `${newNoteDate}: ${newNote}`;
     notesTextContainer.appendChild(newPlantNoteElement);
   }
+
+  // Get Days Since Last Watered
+
+  let daysSinceWatered;
+
+  function calculateDaysSinceWatered() {
+    let today = new Date().toLocaleDateString("london");
+    let todayFormatted = today.split("/").reverse().join("-");
+
+    let lastWaterDay = plantNotesByID[0].time;
+    let lastWaterDayFormatted = lastWaterDay.split("-").reverse().join("-");
+
+    let startDate = lastWaterDayFormatted;
+    let endDate = todayFormatted;
+
+    let diffInMs = new Date(endDate) - new Date(startDate);
+    daysSinceWatered = diffInMs / (1000 * 60 * 60 * 24);
+    return daysSinceWatered;
+  }
+
+  calculateDaysSinceWatered();
 
   // Plant condition rating values
 
@@ -71,7 +91,7 @@ async function setPlantText() {
   // Assign data to elements
   plantTitleElement.innerText = `ID: ${plantID} / ${plantName}`;
   plantImageElement.src = plantImage;
-  plantLastWaterTextElement.innerText = `${plantLastWateredText} DAYS AGO`;
+  plantLastWaterTextElement.innerText = `${daysSinceWatered} DAYS AGO`;
   plantWaterTextElement.innerText = plantWaterText;
   plantTempTextElement.innerText = `${plantTempText}'C`;
   plantLightTextElement.innerText = plantLightText;
@@ -121,6 +141,7 @@ async function handleLeftClick() {
 function refreshNotes() {
   plantNotesContainer.innerText = "";
   setPlantText();
+  document.getElementById("form").reset();
 }
 
 async function handleSubmitClick() {
@@ -132,8 +153,6 @@ function clearConditionRating() {
     plantRatingBlocks[i].style.backgroundColor = "#2D2D2D";
   }
 }
-
-// Generate notes
 
 // Event listeners
 
