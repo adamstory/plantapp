@@ -106,8 +106,11 @@ router.get("/plantnotes", async function (req, res) {
 router.post("/plantnotes", async function (req, res) {
   const plantNoteInfo = {
     id: req.body.id,
+    watered: req.body.watered ? true : false,
+    condition: req.body.condition,
     note: req.body.note,
   };
+
   let isSuccess = true;
   let newPlantNote = await createPlantNote(plantNoteInfo);
   res.json({

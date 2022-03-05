@@ -1,6 +1,7 @@
 // Button queries
 let rightButton = document.querySelector("#right_button");
 let leftButton = document.querySelector("#left_button");
+let submitButton = document.querySelector("#submitform");
 
 // Plant info queries
 let plantImageElement = document.querySelector("#plant_image");
@@ -29,8 +30,12 @@ async function setPlantText() {
   const data = await response.json();
   plantsArray = data.payload;
 
+  const notesResponse = await fetch("/plantnotes");
+  const notesData = await notesResponse.json();
+  plantNotesArray = notesData.payload;
+
   // Log data for testing (remove)
-  console.log(plantsArray);
+  // console.log(plantsArray);
 
   // Plant values
   let plantName = plantsArray[currentIndex].name;
@@ -44,19 +49,18 @@ async function setPlantText() {
 
   // Plant notes values
 
-  let plantNotesObject = plantsArray[currentIndex].notes;
-  let plantNotesObjectLength = Object.keys(plantNotesObject).length;
+  const plantNotesByID = plantNotesArray
+    .reverse()
+    .filter((item) => item.id === plantID);
 
-  for (let i = 1; i <= plantNotesObjectLength; i++) {
+  for (let i = 0; i < plantNotesByID.length; i++) {
     let notesTextContainer = document.querySelector("#notes_text_container");
     let newPlantNoteElement = document.createElement("h4");
     newPlantNoteElement.setAttribute("id", "note");
-    console.log(plantNotesObject[i]);
-    newPlantNoteElement.innerText = plantNotesObject[i];
+    let newNote = plantNotesByID[i].note;
+    newPlantNoteElement.innerText = newNote;
     notesTextContainer.appendChild(newPlantNoteElement);
   }
-
-  console.log(plantNotesObject, plantNotesObjectLength);
 
   // Plant condition rating values
 
@@ -114,6 +118,15 @@ async function handleLeftClick() {
   }
 }
 
+function refreshNotes() {
+  plantNotesContainer.innerText = "";
+  setPlantText();
+}
+
+async function handleSubmitClick() {
+  setTimeout(refreshNotes, 1000);
+}
+
 function clearConditionRating() {
   for (let i = 0; i < 10; i++) {
     plantRatingBlocks[i].style.backgroundColor = "#2D2D2D";
@@ -126,3 +139,4 @@ function clearConditionRating() {
 
 rightButton.addEventListener("click", handleRightClick);
 leftButton.addEventListener("click", handleLeftClick);
+submitButton.addEventListener("click", handleSubmitClick);

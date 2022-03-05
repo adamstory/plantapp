@@ -48,8 +48,8 @@ export async function getAllPlantNotes() {
 
 export async function createPlantNote(info) {
   const data = await query(
-    `INSERT INTO plantNotes(id, note) VALUES ($1, $2) RETURNING *;`,
-    [info.id, info.note]
+    `INSERT INTO plantNotes(id, watered, condition, note) VALUES ($1, $2, $3, $4) RETURNING *;`,
+    [info.id, info.watered, info.condition, info.note]
   );
   return data.rows;
 }
