@@ -61,6 +61,23 @@ async function setPlantText() {
     notesTextContainer.appendChild(newPlantNoteElement);
   }
 
+  // Get Condition Rating Average
+
+  let conditionRatingAverage;
+
+  function calculateConditionRatingAverage() {
+    let numberOfRatings = plantNotesByID.length;
+    let ratingTotal = 0;
+    for (let i = 0; i < numberOfRatings; i++) {
+      ratingTotal += plantNotesByID[i].condition;
+    }
+    conditionRatingAverage = Math.round(ratingTotal / numberOfRatings);
+    // console.log("ratingAvg:", conditionRatingAverage);
+    return conditionRatingAverage;
+  }
+
+  calculateConditionRatingAverage();
+
   // Get Days Since Last Watered
 
   let daysSinceWatered;
@@ -71,12 +88,12 @@ async function setPlantText() {
     let todayFormatted = today.split("-").reverse().join("-");
 
     let lastWaterDay = plantNotesByID[0].time;
-    console.log(lastWaterDay);
-    console.log(todayFormatted, lastWaterDay);
+    // console.log(lastWaterDay);
+    // console.log(todayFormatted, lastWaterDay);
 
     let startDate = lastWaterDay;
     let endDate = todayFormatted;
-    console.log("test1:", lastWaterDay);
+    // console.log("test1:", lastWaterDay);
 
     // Process for deploying on Heroku - last watered
 
@@ -84,8 +101,8 @@ async function setPlantText() {
     let lwDate = lw.splice(0, 1)[0];
     lw.splice(1, 0, lwDate);
     lw = lw.join("-");
-    console.log("lw:", lw);
-    console.log("lwDate:", lwDate);
+    // console.log("lw:", lw);
+    // console.log("lwDate:", lwDate);
 
     // Process for deploying on Heroku - last watered
 
@@ -93,8 +110,8 @@ async function setPlantText() {
     let tdDate = td.splice(0, 1)[0];
     td.splice(1, 0, tdDate);
     td = td.join("-");
-    console.log("td:", td);
-    console.log("tdDate:", tdDate);
+    // console.log("td:", td);
+    // console.log("tdDate:", tdDate);
 
     let diffInMs = new Date(td) - new Date(lw);
     daysSinceWatered = diffInMs / (1000 * 60 * 60 * 24);
@@ -105,7 +122,7 @@ async function setPlantText() {
 
   // Plant condition rating values
 
-  for (let i = 0; i < conditionRating; i++) {
+  for (let i = 0; i < conditionRatingAverage; i++) {
     plantRatingBlocks[i].style.backgroundColor = "#F6F6F6";
   }
 
@@ -170,6 +187,7 @@ async function handleLeftClick() {
 }
 
 function refreshNotes() {
+  clearConditionRating();
   plantNotesContainer.innerText = "";
   setPlantText();
   document.getElementById("form").reset();
