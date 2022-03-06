@@ -66,16 +66,37 @@ async function setPlantText() {
   let daysSinceWatered;
 
   function calculateDaysSinceWatered() {
-    let today = new Date().toLocaleDateString("london");
-    let todayFormatted = today.split("/").reverse().join("-");
+    // Needs refactor and clean up
+    let today = new Date().toISOString().slice(0, 10);
+    let todayFormatted = today.split("-").reverse().join("-");
 
     let lastWaterDay = plantNotesByID[0].time;
-    let lastWaterDayFormatted = lastWaterDay.split("-").reverse().join("-");
+    console.log(lastWaterDay);
+    console.log(todayFormatted, lastWaterDay);
 
-    let startDate = lastWaterDayFormatted;
+    let startDate = lastWaterDay;
     let endDate = todayFormatted;
+    console.log("test1:", lastWaterDay);
 
-    let diffInMs = new Date(endDate) - new Date(startDate);
+    // Process for deploying on Heroku - last watered
+
+    let lw = lastWaterDay.split("-");
+    let lwDate = lw.splice(0, 1)[0];
+    lw.splice(1, 0, lwDate);
+    lw = lw.join("-");
+    console.log("lw:", lw);
+    console.log("lwDate:", lwDate);
+
+    // Process for deploying on Heroku - last watered
+
+    let td = todayFormatted.split("-");
+    let tdDate = td.splice(0, 1)[0];
+    td.splice(1, 0, tdDate);
+    td = td.join("-");
+    console.log("td:", td);
+    console.log("tdDate:", tdDate);
+
+    let diffInMs = new Date(td) - new Date(lw);
     daysSinceWatered = diffInMs / (1000 * 60 * 60 * 24);
     return daysSinceWatered;
   }

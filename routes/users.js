@@ -105,9 +105,9 @@ router.get("/plantnotes", async function (req, res) {
 // Post new plant note
 router.post("/plantnotes", async function (req, res) {
   // Get current time
-  let today = new Date().toLocaleDateString("london");
+  let today = new Date().toISOString().slice(0, 10);
   console.log(today);
-  let todayFormatted = today.replace(/\//g, "-");
+  let todayFormatted = today.split("-").reverse().join("-");
   console.log(todayFormatted);
 
   const plantNoteInfo = {
