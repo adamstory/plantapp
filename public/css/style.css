@@ -242,6 +242,11 @@ a {
   color: white;
 }
 
+#droplet_icon {
+  width: 80%;
+  margin-top: -10%;
+}
+
 #plant_data_input_container {
   background-color: #f6f6f6;
   width: 30%;

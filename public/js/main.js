@@ -7,7 +7,7 @@ let submitButton = document.querySelector("#submitform");
 let plantImageElement = document.querySelector("#plant_image");
 let plantTitleElement = document.querySelector("#plant_title_text");
 let plantLastWaterTextElement = document.querySelector("#days_ago_text");
-let plantWaterTextElement = document.querySelector("#water_icon");
+let plantWaterIconElement = document.querySelector("#droplet_icon");
 let plantTempTextElement = document.querySelector("#temperature_icon");
 let plantLightTextElement = document.querySelector("#light_icon");
 
@@ -40,7 +40,7 @@ async function setPlantText() {
   let conditionRating = plantsArray[currentIndex].conditionrating;
   let plantID = plantsArray[currentIndex].id;
   let plantImage = plantsArray[currentIndex].image;
-  let plantLastWateredText = plantsArray[currentIndex].lastwatered;
+  // let plantLastWateredText = plantsArray[currentIndex].lastwatered;
   let plantWaterText = plantsArray[currentIndex].waterrating;
   let plantTempText = plantsArray[currentIndex].temperature;
   let plantLightText = plantsArray[currentIndex].light;
@@ -113,7 +113,12 @@ async function setPlantText() {
   plantTitleElement.innerText = `ID: ${plantID} / ${plantName}`;
   plantImageElement.src = plantImage;
   plantLastWaterTextElement.innerText = `${daysSinceWatered} DAYS AGO`;
-  plantWaterTextElement.innerText = plantWaterText;
+  plantWaterIconElement.src =
+    plantWaterText === "high"
+      ? "./images/icons/waterLevel/waterLevel_Icon_Three.svg"
+      : plantWaterText === "medium"
+      ? "./images/icons/waterLevel/waterLevel_Icon_Two.svg"
+      : "./images/icons/waterLevel/waterLevel_Icon_One.svg";
   plantTempTextElement.innerText = `${plantTempText}'C`;
   plantLightTextElement.innerText = plantLightText;
 
