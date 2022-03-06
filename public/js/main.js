@@ -9,7 +9,7 @@ let plantTitleElement = document.querySelector("#plant_title_text");
 let plantLastWaterTextElement = document.querySelector("#days_ago_text");
 let plantWaterIconElement = document.querySelector("#droplet_icon");
 let plantTempTextElement = document.querySelector("#temperature_icon");
-let plantLightTextElement = document.querySelector("#light_icon");
+let plantLightTextElement = document.querySelector("#sunlight_icon");
 
 // Plant rating bar queries
 let plantRatingContainer = document.querySelector("#rectangle_container");
@@ -120,7 +120,12 @@ async function setPlantText() {
       ? "./images/icons/waterLevel/waterLevel_Icon_Two.svg"
       : "./images/icons/waterLevel/waterLevel_Icon_One.svg";
   plantTempTextElement.innerText = `${plantTempText}'C`;
-  plantLightTextElement.innerText = plantLightText;
+  plantLightTextElement.src =
+    plantLightText === "sun"
+      ? "./images/icons/lightLevel/Sun.svg"
+      : plantLightText === "indirect"
+      ? "./images/icons/lightLevel/CloudSun.svg"
+      : "./images/icons/lightLevel/Cloud.svg";
 
   // Data to form elements
   currentPlantIDNumber.value = plantsArray[currentIndex].id;
