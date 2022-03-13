@@ -1,9 +1,15 @@
-<h1 align = "center"> Holiday Project </h1>
-<h2 align = "center"> 🌱 Plantcycle - An all in one app to look after my houseplants 🌱 </h2>
+<h1 align = "center"> 🌱 Plantcycle 🌱</h1>
+<h2 align = "center"> 🌱 An all in one app to look after my houseplants 🌱 </h2>
 
 ## Project Summary
 
 ☘️ I would like to create an application that will allow me to collect and store data on the condition of each of my plants, with additional features (such as a weather app) in a style that is simple and user friendly.
+
+## How to use
+
+1. [Click me to visit the deployed site for this project](https://my-plantapp.herokuapp.com/)
+2. To view all of my plants, click the left and right arrows to navigate between them.
+3. To add new notes, enter values into the form (orange text). This includes if the plant has been watered, a condition rating of the plant (out of 10), and write any notes to be recorded in the note viewer. 
 
 ## Why this subject?
 
@@ -86,7 +92,6 @@
   - For 5 minutes, pick out 3 separate colour palettes with coolors.co
   - Pick out 2-3 fonts on Google Fonts library
   - Add images of plants from the plant website as examples
-  </details>
 
 #### HTML / CSS
 
@@ -100,7 +105,5 @@
 - UI Research
   - Google how to create your own weather app by pulling from a website / from a api to a website
   - Google how to create UI that transitions like slides on a presentation to see if actually possible
-
-### Questions for myself
-
-- Why is the server listening on ... message not appearing in my terminal?
+  
+</details>
